@@ -1,11 +1,8 @@
 ﻿using CodeGenerator.Models;
-using DocumentFormat.OpenXml.Packaging;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.IO.Compression;
-using System.Text;
-using System.Text.RegularExpressions;
 
 namespace CodeGenerator.Controllers
 {
@@ -32,11 +29,13 @@ namespace CodeGenerator.Controllers
             {
                 while (reader.Peek() >= 0)
                 {
-                    tabelas.Add(new Tabela()
-                    {
-                        Nome = reader.ReadLine().ToString().Replace("\"", ""),
-                        GeraArquivo = true
-                    });
+                    var nome = reader.ReadLine();
+                    if (nome != null)
+                        tabelas.Add(new Tabela()
+                        {
+                            Nome = nome.ToString().Replace("\"", ""),
+                            GeraArquivo = true
+                        });
                 }
             }
             TempData["Tabelas"] = JsonConvert.SerializeObject(tabelas.OrderBy(x => x.Nome).ToList());
@@ -64,64 +63,24 @@ namespace CodeGenerator.Controllers
                 return RedirectToAction("Index");
 
             var filesNameToGenerate = Directory.GetFiles(@"C:\Users\Lais\source\repos\CodeGenerator\CodeGenerator\Example\").ToList();
-            DeleteOlderFiles(filesNameToGenerate, pathToDownload);
+            Helper.Helper.DeleteOlderFiles(filesNameToGenerate, pathToDownload);
 
             foreach (var table in tableViewModel.Tabelas)
                 foreach (var templateFilePath in filesNameToGenerate)
                     if (table.GeraArquivo)
-                        SearchAndReplace(templateFilePath, tableViewModel.Namespace, table.Nome);
+                        Helper.Helper.CreateFiles(templateFilePath, tableViewModel.Namespace, table.Nome);
 
             var directoryInfo = new DirectoryInfo(pathZip);
             foreach (FileInfo file in directoryInfo.GetFiles())
                 file.Delete();
 
-            ZipFile.CreateFromDirectory(pathToDownload, pathZip + @"\Code.zip", CompressionLevel.Fastest, false);
+            var zipName = "Code" + tableViewModel.Namespace + ".zip";
+            ZipFile.CreateFromDirectory(pathToDownload, pathZip + @"\" + zipName, CompressionLevel.Fastest, false);
+            Helper.Helper.DeleteOlderFiles(filesNameToGenerate, pathToDownload);
 
-            byte[] bytes = System.IO.File.ReadAllBytes(pathZip + @"\Code.zip");
+            byte[] bytes = System.IO.File.ReadAllBytes(pathZip + @"\" + zipName);
 
-            return File(bytes, "application/octet-stream", "Code.zip");
-        }
-
-        private static void DeleteOlderFiles(List<string> filesNameToGenerate, string downloadFilePath)
-        {
-            foreach (var templateFilePath in filesNameToGenerate)
-            {
-                var pathFileToDelete =  downloadFilePath +
-                                         @"\" + Path.GetFileNameWithoutExtension(templateFilePath).Replace(".", @"\");
-                var directoryInfo = new DirectoryInfo(pathFileToDelete);
-                foreach (FileInfo file in directoryInfo.GetFiles())
-                    file.Delete();
-            }
-        }
-
-        public static void SearchAndReplace(string templateFilePath, string nameSpace, string className)
-        {
-            StreamReader rd = new StreamReader(templateFilePath);
-            string strContents = rd.ReadToEnd();
-            rd.Close();
-
-            Regex regexText = new Regex("#NAMESPACE#");
-            strContents = regexText.Replace(strContents, nameSpace);
-            regexText = new Regex("#CLASSNAME#");
-            strContents = regexText.Replace(strContents, className.ToUpper());
-            regexText = new Regex("#VARCLASSNAME#");
-            strContents = regexText.Replace(strContents, className);
-
-            string pathToSave = @"C:\Users\Lais\source\repos\CodeGenerator\CodeGenerator\DownloadFiles\" + 
-                                Path.GetFileNameWithoutExtension(templateFilePath).Replace(".", @"\");
-
-            string fileName = className + "." + "cs";
-
-            var path = Path.Combine(pathToSave, fileName);
-
-            using (FileStream fs = new FileStream(path, FileMode.Create))
-            {
-                using (BinaryWriter bw = new BinaryWriter(fs))
-                {
-                    bw.Write(strContents);
-                    bw.Close();
-                }
-            }
+            return File(bytes, "application/octet-stream", zipName);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
