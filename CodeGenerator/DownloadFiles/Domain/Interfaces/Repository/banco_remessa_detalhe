@@ -1,9 +1,0 @@
-èusing hbhg.Domain.Entities;
-using hbhg.Domain.Interfaces.Repository.Common;
-
-namespace hbhg.Domain.Interfaces.Repository
-{
-    public interface IBANCO_REMESSA_DETALHERepository : IRepositoryBase<BANCO_REMESSA_DETALHE>
-    {
-    }
-}

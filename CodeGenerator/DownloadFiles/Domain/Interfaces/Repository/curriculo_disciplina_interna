@@ -1,9 +1,0 @@
-öusing hbhg.Domain.Entities;
-using hbhg.Domain.Interfaces.Repository.Common;
-
-namespace hbhg.Domain.Interfaces.Repository
-{
-    public interface ICURRICULO_DISCIPLINA_INTERNARepository : IRepositoryBase<CURRICULO_DISCIPLINA_INTERNA>
-    {
-    }
-}

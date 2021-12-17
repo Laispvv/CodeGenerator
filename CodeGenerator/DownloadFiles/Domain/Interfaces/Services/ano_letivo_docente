@@ -1,9 +1,0 @@
-Õusing hbhg.Domain.Entities;
-using hbhg.Domain.Interfaces.Service.Common;
-
-namespace hbhg.Domain.Interfaces.Service
-{
-    public interface IANO_LETIVO_DOCENTEService : IServiceBase<ANO_LETIVO_DOCENTE>
-    {
-    }
-}

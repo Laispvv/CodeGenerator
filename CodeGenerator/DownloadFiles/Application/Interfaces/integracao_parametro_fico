@@ -1,9 +1,0 @@
-õusing hbhg.Application.Interfaces.Common;
-using hbhg.Application.ViewModels;
-
-namespace hbhg.Application.Interfaces
-{
-    public interface IINTEGRACAO_PARAMETRO_FICOAppService : IAppServicesBase<INTEGRACAO_PARAMETRO_FICOViewModel>
-    {
-    }
-}

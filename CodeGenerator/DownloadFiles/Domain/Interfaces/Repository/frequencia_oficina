@@ -1,9 +1,0 @@
-âusing hbhg.Domain.Entities;
-using hbhg.Domain.Interfaces.Repository.Common;
-
-namespace hbhg.Domain.Interfaces.Repository
-{
-    public interface IFREQUENCIA_OFICINARepository : IRepositoryBase<FREQUENCIA_OFICINA>
-    {
-    }
-}

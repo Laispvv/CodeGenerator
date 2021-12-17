@@ -1,9 +1,0 @@
-ñusing hbhg.Application.Interfaces.Common;
-using hbhg.Application.ViewModels;
-
-namespace hbhg.Application.Interfaces
-{
-    public interface IDOCUMENTO_CONTABIL_ITEMAppService : IAppServicesBase<DOCUMENTO_CONTABIL_ITEMViewModel>
-    {
-    }
-}

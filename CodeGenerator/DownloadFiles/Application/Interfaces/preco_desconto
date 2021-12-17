@@ -1,9 +1,0 @@
-ßusing hbhg.Application.Interfaces.Common;
-using hbhg.Application.ViewModels;
-
-namespace hbhg.Application.Interfaces
-{
-    public interface IPRECO_DESCONTOAppService : IAppServicesBase<PRECO_DESCONTOViewModel>
-    {
-    }
-}

@@ -1,9 +1,0 @@
-Õusing hbhg.Domain.Entities;
-using hbhg.Domain.Interfaces.Service.Common;
-
-namespace hbhg.Domain.Interfaces.Service
-{
-    public interface IPARECER_DESCRITIVOService : IServiceBase<PARECER_DESCRITIVO>
-    {
-    }
-}

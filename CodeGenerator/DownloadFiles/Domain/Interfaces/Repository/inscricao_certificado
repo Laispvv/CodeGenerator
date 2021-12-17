@@ -1,9 +1,0 @@
-èusing hbhg.Domain.Entities;
-using hbhg.Domain.Interfaces.Repository.Common;
-
-namespace hbhg.Domain.Interfaces.Repository
-{
-    public interface IINSCRICAO_CERTIFICADORepository : IRepositoryBase<INSCRICAO_CERTIFICADO>
-    {
-    }
-}
