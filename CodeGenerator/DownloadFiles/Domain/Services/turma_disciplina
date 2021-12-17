@@ -1,0 +1,16 @@
+Ÿusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly ITURMA_DISCIPLINARepository _turma_disciplinaRepository;
+        public AnexoService(ITURMA_DISCIPLINARepository turma_disciplinaRepository) : base(turma_disciplinaRepository)
+        {
+            _turma_disciplinaRepository = turma_disciplinaRepository;
+        }
+    }
+}

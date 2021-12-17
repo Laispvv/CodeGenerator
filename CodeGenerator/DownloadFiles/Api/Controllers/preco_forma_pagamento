@@ -1,0 +1,17 @@
+Œusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class PRECO_FORMA_PAGAMENTOController : BaseController<PRECO_FORMA_PAGAMENTOViewModel>
+    {
+        private readonly IPRECO_FORMA_PAGAMENTOServiceAppService _preco_forma_pagamentoAppService;
+        public PRECO_FORMA_PAGAMENTOController(IPRECO_FORMA_PAGAMENTOAppService preco_forma_pagamentoAppService) : base(preco_forma_pagamentoAppService)
+        {
+            _preco_forma_pagamentoAppService = PRECO_FORMA_PAGAMENTOAppService;
+        }
+    }
+}

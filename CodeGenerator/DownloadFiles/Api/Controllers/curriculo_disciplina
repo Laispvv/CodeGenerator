@@ -1,0 +1,17 @@
+‚using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class CURRICULO_DISCIPLINAController : BaseController<CURRICULO_DISCIPLINAViewModel>
+    {
+        private readonly ICURRICULO_DISCIPLINAServiceAppService _curriculo_disciplinaAppService;
+        public CURRICULO_DISCIPLINAController(ICURRICULO_DISCIPLINAAppService curriculo_disciplinaAppService) : base(curriculo_disciplinaAppService)
+        {
+            _curriculo_disciplinaAppService = CURRICULO_DISCIPLINAAppService;
+        }
+    }
+}

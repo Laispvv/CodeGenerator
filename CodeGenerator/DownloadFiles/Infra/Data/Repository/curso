@@ -1,0 +1,14 @@
+ÿusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class CURSORepository : RepositoryBase<CURSO>, ICURSORepository
+    {
+        private readonly ApplicationDbContext _context;
+        public CURSORepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

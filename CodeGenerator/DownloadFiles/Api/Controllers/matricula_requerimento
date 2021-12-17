@@ -1,0 +1,17 @@
+–using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class MATRICULA_REQUERIMENTOController : BaseController<MATRICULA_REQUERIMENTOViewModel>
+    {
+        private readonly IMATRICULA_REQUERIMENTOServiceAppService _matricula_requerimentoAppService;
+        public MATRICULA_REQUERIMENTOController(IMATRICULA_REQUERIMENTOAppService matricula_requerimentoAppService) : base(matricula_requerimentoAppService)
+        {
+            _matricula_requerimentoAppService = MATRICULA_REQUERIMENTOAppService;
+        }
+    }
+}

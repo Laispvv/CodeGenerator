@@ -1,0 +1,20 @@
+®using AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class EMPRESTIMOAppService : ServiceBase<EMPRESTIMOViewModel, EMPRESTIMO>, IEMPRESTIMOAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IEMPRESTIMOService _emprestimoService;
+        public EMPRESTIMOAppService(IMapper mapper, IEMPRESTIMOService emprestimoService) : base(mapper, emprestimoService)
+        {
+            _mapper = mapper;
+            _emprestimoService = emprestimoService;
+        }
+    }
+}

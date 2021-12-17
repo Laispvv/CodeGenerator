@@ -1,0 +1,14 @@
+‡using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class CONTATORepository : RepositoryBase<CONTATO>, ICONTATORepository
+    {
+        private readonly ApplicationDbContext _context;
+        public CONTATORepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

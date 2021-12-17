@@ -1,0 +1,14 @@
+ƒusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class ACERVORepository : RepositoryBase<ACERVO>, IACERVORepository
+    {
+        private readonly ApplicationDbContext _context;
+        public ACERVORepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+žusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class FREQUENCIAController : BaseController<FREQUENCIAViewModel>
+    {
+        private readonly IFREQUENCIAServiceAppService _frequenciaAppService;
+        public FREQUENCIAController(IFREQUENCIAAppService frequenciaAppService) : base(frequenciaAppService)
+        {
+            _frequenciaAppService = FREQUENCIAAppService;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+Šusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class DESCONTOController : BaseController<DESCONTOViewModel>
+    {
+        private readonly IDESCONTOServiceAppService _descontoAppService;
+        public DESCONTOController(IDESCONTOAppService descontoAppService) : base(descontoAppService)
+        {
+            _descontoAppService = DESCONTOAppService;
+        }
+    }
+}

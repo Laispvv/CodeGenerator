@@ -1,0 +1,20 @@
+êusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class PONTO_ADICIONALAppService : ServiceBase<PONTO_ADICIONALViewModel, PONTO_ADICIONAL>, IPONTO_ADICIONALAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IPONTO_ADICIONALService _ponto_adicionalService;
+        public PONTO_ADICIONALAppService(IMapper mapper, IPONTO_ADICIONALService ponto_adicionalService) : base(mapper, ponto_adicionalService)
+        {
+            _mapper = mapper;
+            _ponto_adicionalService = ponto_adicionalService;
+        }
+    }
+}

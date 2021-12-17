@@ -1,0 +1,9 @@
+åusing hbhg.Application.Interfaces.Common;
+using hbhg.Application.ViewModels;
+
+namespace hbhg.Application.Interfaces
+{
+    public interface ISALDO_ANTECIPACAOAppService : IAppServicesBase<SALDO_ANTECIPACAOViewModel>
+    {
+    }
+}

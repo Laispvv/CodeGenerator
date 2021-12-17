@@ -1,0 +1,17 @@
+Úusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class REGRA_EMPRESTIMOController : BaseController<REGRA_EMPRESTIMOViewModel>
+    {
+        private readonly IREGRA_EMPRESTIMOServiceAppService _regra_emprestimoAppService;
+        public REGRA_EMPRESTIMOController(IREGRA_EMPRESTIMOAppService regra_emprestimoAppService) : base(regra_emprestimoAppService)
+        {
+            _regra_emprestimoAppService = REGRA_EMPRESTIMOAppService;
+        }
+    }
+}

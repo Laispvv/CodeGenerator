@@ -1,0 +1,17 @@
+€using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class ARQUIVOController : BaseController<ARQUIVOViewModel>
+    {
+        private readonly IARQUIVOServiceAppService _arquivoAppService;
+        public ARQUIVOController(IARQUIVOAppService arquivoAppService) : base(arquivoAppService)
+        {
+            _arquivoAppService = ARQUIVOAppService;
+        }
+    }
+}

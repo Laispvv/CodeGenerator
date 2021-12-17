@@ -1,0 +1,16 @@
+¦using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IINSCRICAO_OFICINARepository _inscricao_oficinaRepository;
+        public AnexoService(IINSCRICAO_OFICINARepository inscricao_oficinaRepository) : base(inscricao_oficinaRepository)
+        {
+            _inscricao_oficinaRepository = inscricao_oficinaRepository;
+        }
+    }
+}

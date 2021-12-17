@@ -1,0 +1,17 @@
+Šusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class DEPOSITOController : BaseController<DEPOSITOViewModel>
+    {
+        private readonly IDEPOSITOServiceAppService _depositoAppService;
+        public DEPOSITOController(IDEPOSITOAppService depositoAppService) : base(depositoAppService)
+        {
+            _depositoAppService = DEPOSITOAppService;
+        }
+    }
+}

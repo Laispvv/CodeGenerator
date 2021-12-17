@@ -1,0 +1,20 @@
+Þusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class USUARIO_PERFILAppService : ServiceBase<USUARIO_PERFILViewModel, USUARIO_PERFIL>, IUSUARIO_PERFILAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IUSUARIO_PERFILService _usuario_perfilService;
+        public USUARIO_PERFILAppService(IMapper mapper, IUSUARIO_PERFILService usuario_perfilService) : base(mapper, usuario_perfilService)
+        {
+            _mapper = mapper;
+            _usuario_perfilService = usuario_perfilService;
+        }
+    }
+}

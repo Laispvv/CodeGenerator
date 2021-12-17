@@ -1,0 +1,17 @@
+Þusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class CONTAS_RECEBER_DESCONTO_INSERIDAS_20210629Controller : BaseController<CONTAS_RECEBER_DESCONTO_INSERIDAS_20210629ViewModel>
+    {
+        private readonly ICONTAS_RECEBER_DESCONTO_INSERIDAS_20210629ServiceAppService _contas_receber_desconto_inseridas_20210629AppService;
+        public CONTAS_RECEBER_DESCONTO_INSERIDAS_20210629Controller(ICONTAS_RECEBER_DESCONTO_INSERIDAS_20210629AppService contas_receber_desconto_inseridas_20210629AppService) : base(contas_receber_desconto_inseridas_20210629AppService)
+        {
+            _contas_receber_desconto_inseridas_20210629AppService = CONTAS_RECEBER_DESCONTO_INSERIDAS_20210629AppService;
+        }
+    }
+}

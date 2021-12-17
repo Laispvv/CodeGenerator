@@ -1,0 +1,58 @@
+﻿@model CodeGenerator.Models.TabelaViewModel;
+@{
+    ViewData["Title"] = "NamespaceAndTableSelection";
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Generator</title>
+    <link rel="stylesheet" href="~/css/NamespaceAndTableSelection.css"/>
+</head>
+
+<h1 class="text-center">Seleção de Classes</h1>
+<p class="text-center">Selecione para quais classes os arquivos serão gerados e indique o Namespace.</p>
+<form method="post" asp-action="NamespaceAndTableSelection" asp-controller="Home">
+    <div class="col-md-12 mt-3">
+        <input class="form-control" type="text" name="Namespace" placeholder="Namespace" required>
+        <div class="valid-feedback">Namespace inválido.</div>
+        <div class="invalid-feedback">Namespace deve ser preenchido.</div>
+    </div>
+     <div class="col-md-12 mt-3 tableFixHead">
+        <table class="table">
+            <thead style="background-color:lightgray">
+                <tr>
+                    <th style="background-color: lightgray;" scope="col">Tabela</th>
+                    <th style="background-color: lightgray;" scope="col">Gerar arquivos?</th>
+                </tr>
+            </thead>
+            <tbody>
+                    @for(var i = 0; i < Model.Tabelas.Count(); i++)
+                    {
+                        <tr>
+                            <input asp-for=@Model.Tabelas[i].Nome hidden="hidden"/>
+                            <th style="font-weight:400">@Model.Tabelas[i].Nome</th>
+                            <th style="text-align:center">
+                                @if(Model.Tabelas[i].GeraArquivo == false)
+                                {
+                                    <input asp-for=@Model.Tabelas[i].GeraArquivo type="checkbox"/>
+                                }
+                                else
+                                {
+                                    <input asp-for=@Model.Tabelas[i].GeraArquivo type="checkbox" checked="checked"/>
+                                }
+                            </th>
+                        </tr>
+                    }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-12 row mt-5">
+        <div class="col-md-6">
+            <button id="voltarTelaInicial" type="button" onclick="location.href='@Url.Action("Index", "Home")'" class="btn btn-primary">Voltar</button>
+        </div>
+        <div class="col-md-6" style="display:flex; justify-content:end;">
+            <button id="GerarArquivosDownload" type="submit" class="btn btn-primary">Gerar arquivos</button>
+        </div>
+    </div>
+</form>
+

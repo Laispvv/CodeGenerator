@@ -1,0 +1,20 @@
+öusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class CURRICULO_SERIESAppService : ServiceBase<CURRICULO_SERIESViewModel, CURRICULO_SERIES>, ICURRICULO_SERIESAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly ICURRICULO_SERIESService _curriculo_seriesService;
+        public CURRICULO_SERIESAppService(IMapper mapper, ICURRICULO_SERIESService curriculo_seriesService) : base(mapper, curriculo_seriesService)
+        {
+            _mapper = mapper;
+            _curriculo_seriesService = curriculo_seriesService;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+èusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class AVALIACAORepository : RepositoryBase<AVALIACAO>, IAVALIACAORepository
+    {
+        private readonly ApplicationDbContext _context;
+        public AVALIACAORepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

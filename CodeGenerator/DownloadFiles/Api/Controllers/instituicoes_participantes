@@ -1,0 +1,17 @@
+¾using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class INSTITUICOES_PARTICIPANTESController : BaseController<INSTITUICOES_PARTICIPANTESViewModel>
+    {
+        private readonly IINSTITUICOES_PARTICIPANTESServiceAppService _instituicoes_participantesAppService;
+        public INSTITUICOES_PARTICIPANTESController(IINSTITUICOES_PARTICIPANTESAppService instituicoes_participantesAppService) : base(instituicoes_participantesAppService)
+        {
+            _instituicoes_participantesAppService = INSTITUICOES_PARTICIPANTESAppService;
+        }
+    }
+}

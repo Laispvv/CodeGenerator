@@ -1,0 +1,20 @@
+Šusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class CONTATOAppService : ServiceBase<CONTATOViewModel, CONTATO>, ICONTATOAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly ICONTATOService _contatoService;
+        public CONTATOAppService(IMapper mapper, ICONTATOService contatoService) : base(mapper, contatoService)
+        {
+            _mapper = mapper;
+            _contatoService = contatoService;
+        }
+    }
+}

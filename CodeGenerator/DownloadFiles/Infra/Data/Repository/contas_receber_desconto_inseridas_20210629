@@ -1,0 +1,14 @@
+“using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class CONTAS_RECEBER_DESCONTO_INSERIDAS_20210629Repository : RepositoryBase<CONTAS_RECEBER_DESCONTO_INSERIDAS_20210629>, ICONTAS_RECEBER_DESCONTO_INSERIDAS_20210629Repository
+    {
+        private readonly ApplicationDbContext _context;
+        public CONTAS_RECEBER_DESCONTO_INSERIDAS_20210629Repository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

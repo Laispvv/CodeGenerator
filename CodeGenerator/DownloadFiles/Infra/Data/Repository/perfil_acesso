@@ -1,0 +1,14 @@
+Ÿusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class PERFIL_ACESSORepository : RepositoryBase<PERFIL_ACESSO>, IPERFIL_ACESSORepository
+    {
+        private readonly ApplicationDbContext _context;
+        public PERFIL_ACESSORepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

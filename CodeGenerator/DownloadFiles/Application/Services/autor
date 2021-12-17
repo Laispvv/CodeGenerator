@@ -1,0 +1,20 @@
+òusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class AUTORAppService : ServiceBase<AUTORViewModel, AUTOR>, IAUTORAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IAUTORService _autorService;
+        public AUTORAppService(IMapper mapper, IAUTORService autorService) : base(mapper, autorService)
+        {
+            _mapper = mapper;
+            _autorService = autorService;
+        }
+    }
+}

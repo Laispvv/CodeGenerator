@@ -1,0 +1,20 @@
+Æusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class PRECO_OBJETOAppService : ServiceBase<PRECO_OBJETOViewModel, PRECO_OBJETO>, IPRECO_OBJETOAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IPRECO_OBJETOService _preco_objetoService;
+        public PRECO_OBJETOAppService(IMapper mapper, IPRECO_OBJETOService preco_objetoService) : base(mapper, preco_objetoService)
+        {
+            _mapper = mapper;
+            _preco_objetoService = preco_objetoService;
+        }
+    }
+}

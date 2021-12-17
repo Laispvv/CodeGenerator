@@ -1,0 +1,20 @@
+Æusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class MENU_SISTEMAAppService : ServiceBase<MENU_SISTEMAViewModel, MENU_SISTEMA>, IMENU_SISTEMAAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IMENU_SISTEMAService _menu_sistemaService;
+        public MENU_SISTEMAAppService(IMapper mapper, IMENU_SISTEMAService menu_sistemaService) : base(mapper, menu_sistemaService)
+        {
+            _mapper = mapper;
+            _menu_sistemaService = menu_sistemaService;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+Žusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class MATRICULA_CONTRATOAppService : ServiceBase<MATRICULA_CONTRATOViewModel, MATRICULA_CONTRATO>, IMATRICULA_CONTRATOAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IMATRICULA_CONTRATOService _matricula_contratoService;
+        public MATRICULA_CONTRATOAppService(IMapper mapper, IMATRICULA_CONTRATOService matricula_contratoService) : base(mapper, matricula_contratoService)
+        {
+            _mapper = mapper;
+            _matricula_contratoService = matricula_contratoService;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+ÿusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class BANCORepository : RepositoryBase<BANCO>, IBANCORepository
+    {
+        private readonly ApplicationDbContext _context;
+        public BANCORepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

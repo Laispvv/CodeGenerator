@@ -1,0 +1,20 @@
+Žusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class DOCUMENTO_CONTABILAppService : ServiceBase<DOCUMENTO_CONTABILViewModel, DOCUMENTO_CONTABIL>, IDOCUMENTO_CONTABILAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IDOCUMENTO_CONTABILService _documento_contabilService;
+        public DOCUMENTO_CONTABILAppService(IMapper mapper, IDOCUMENTO_CONTABILService documento_contabilService) : base(mapper, documento_contabilService)
+        {
+            _mapper = mapper;
+            _documento_contabilService = documento_contabilService;
+        }
+    }
+}

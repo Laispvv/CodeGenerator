@@ -1,0 +1,14 @@
+³using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class PERIODO_FINANCEIRORepository : RepositoryBase<PERIODO_FINANCEIRO>, IPERIODO_FINANCEIRORepository
+    {
+        private readonly ApplicationDbContext _context;
+        public PERIODO_FINANCEIRORepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

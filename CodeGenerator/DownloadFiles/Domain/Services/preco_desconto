@@ -1,0 +1,16 @@
+‘using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IPRECO_DESCONTORepository _preco_descontoRepository;
+        public AnexoService(IPRECO_DESCONTORepository preco_descontoRepository) : base(preco_descontoRepository)
+        {
+            _preco_descontoRepository = preco_descontoRepository;
+        }
+    }
+}

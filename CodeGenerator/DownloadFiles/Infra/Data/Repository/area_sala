@@ -1,0 +1,14 @@
+èusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class AREA_SALARepository : RepositoryBase<AREA_SALA>, IAREA_SALARepository
+    {
+        private readonly ApplicationDbContext _context;
+        public AREA_SALARepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

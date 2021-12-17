@@ -1,0 +1,14 @@
+“using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class FREQUENCIARepository : RepositoryBase<FREQUENCIA>, IFREQUENCIARepository
+    {
+        private readonly ApplicationDbContext _context;
+        public FREQUENCIARepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

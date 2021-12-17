@@ -1,0 +1,17 @@
+€using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class DOMINIOController : BaseController<DOMINIOViewModel>
+    {
+        private readonly IDOMINIOServiceAppService _dominioAppService;
+        public DOMINIOController(IDOMINIOAppService dominioAppService) : base(dominioAppService)
+        {
+            _dominioAppService = DOMINIOAppService;
+        }
+    }
+}

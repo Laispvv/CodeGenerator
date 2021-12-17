@@ -1,0 +1,20 @@
+êusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class FORMA_PAGAMENTOAppService : ServiceBase<FORMA_PAGAMENTOViewModel, FORMA_PAGAMENTO>, IFORMA_PAGAMENTOAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IFORMA_PAGAMENTOService _forma_pagamentoService;
+        public FORMA_PAGAMENTOAppService(IMapper mapper, IFORMA_PAGAMENTOService forma_pagamentoService) : base(mapper, forma_pagamentoService)
+        {
+            _mapper = mapper;
+            _forma_pagamentoService = forma_pagamentoService;
+        }
+    }
+}

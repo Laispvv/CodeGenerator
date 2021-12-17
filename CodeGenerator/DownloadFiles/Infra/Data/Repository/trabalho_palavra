@@ -1,0 +1,14 @@
+«using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class TRABALHO_PALAVRARepository : RepositoryBase<TRABALHO_PALAVRA>, ITRABALHO_PALAVRARepository
+    {
+        private readonly ApplicationDbContext _context;
+        public TRABALHO_PALAVRARepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

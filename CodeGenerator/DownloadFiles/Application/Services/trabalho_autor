@@ -1,0 +1,20 @@
+Þusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class TRABALHO_AUTORAppService : ServiceBase<TRABALHO_AUTORViewModel, TRABALHO_AUTOR>, ITRABALHO_AUTORAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly ITRABALHO_AUTORService _trabalho_autorService;
+        public TRABALHO_AUTORAppService(IMapper mapper, ITRABALHO_AUTORService trabalho_autorService) : base(mapper, trabalho_autorService)
+        {
+            _mapper = mapper;
+            _trabalho_autorService = trabalho_autorService;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+”using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class INSCRICAOController : BaseController<INSCRICAOViewModel>
+    {
+        private readonly IINSCRICAOServiceAppService _inscricaoAppService;
+        public INSCRICAOController(IINSCRICAOAppService inscricaoAppService) : base(inscricaoAppService)
+        {
+            _inscricaoAppService = INSCRICAOAppService;
+        }
+    }
+}

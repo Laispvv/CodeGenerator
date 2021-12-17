@@ -1,0 +1,16 @@
+Ðusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly ICONTAS_RECEBER_DESCONTORepository _contas_receber_descontoRepository;
+        public AnexoService(ICONTAS_RECEBER_DESCONTORepository contas_receber_descontoRepository) : base(contas_receber_descontoRepository)
+        {
+            _contas_receber_descontoRepository = contas_receber_descontoRepository;
+        }
+    }
+}

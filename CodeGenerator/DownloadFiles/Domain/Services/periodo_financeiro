@@ -1,0 +1,16 @@
+­using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IPERIODO_FINANCEIRORepository _periodo_financeiroRepository;
+        public AnexoService(IPERIODO_FINANCEIRORepository periodo_financeiroRepository) : base(periodo_financeiroRepository)
+        {
+            _periodo_financeiroRepository = periodo_financeiroRepository;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+®using AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class CONTAS_RECEBER_DESCONTO_INSERIDAS_20210629AppService : ServiceBase<CONTAS_RECEBER_DESCONTO_INSERIDAS_20210629ViewModel, CONTAS_RECEBER_DESCONTO_INSERIDAS_20210629>, ICONTAS_RECEBER_DESCONTO_INSERIDAS_20210629AppService
+    {
+        private readonly IMapper _mapper;
+        private readonly ICONTAS_RECEBER_DESCONTO_INSERIDAS_20210629Service _contas_receber_desconto_inseridas_20210629Service;
+        public CONTAS_RECEBER_DESCONTO_INSERIDAS_20210629AppService(IMapper mapper, ICONTAS_RECEBER_DESCONTO_INSERIDAS_20210629Service contas_receber_desconto_inseridas_20210629Service) : base(mapper, contas_receber_desconto_inseridas_20210629Service)
+        {
+            _mapper = mapper;
+            _contas_receber_desconto_inseridas_20210629Service = contas_receber_desconto_inseridas_20210629Service;
+        }
+    }
+}

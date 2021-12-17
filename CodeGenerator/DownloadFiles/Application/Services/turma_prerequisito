@@ -1,0 +1,20 @@
+Žusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class TURMA_PREREQUISITOAppService : ServiceBase<TURMA_PREREQUISITOViewModel, TURMA_PREREQUISITO>, ITURMA_PREREQUISITOAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly ITURMA_PREREQUISITOService _turma_prerequisitoService;
+        public TURMA_PREREQUISITOAppService(IMapper mapper, ITURMA_PREREQUISITOService turma_prerequisitoService) : base(mapper, turma_prerequisitoService)
+        {
+            _mapper = mapper;
+            _turma_prerequisitoService = turma_prerequisitoService;
+        }
+    }
+}

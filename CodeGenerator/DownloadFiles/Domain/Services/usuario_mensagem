@@ -1,0 +1,16 @@
+Ÿusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IUSUARIO_MENSAGEMRepository _usuario_mensagemRepository;
+        public AnexoService(IUSUARIO_MENSAGEMRepository usuario_mensagemRepository) : base(usuario_mensagemRepository)
+        {
+            _usuario_mensagemRepository = usuario_mensagemRepository;
+        }
+    }
+}

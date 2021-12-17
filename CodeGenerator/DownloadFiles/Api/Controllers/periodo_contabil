@@ -1,0 +1,17 @@
+Úusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class PERIODO_CONTABILController : BaseController<PERIODO_CONTABILViewModel>
+    {
+        private readonly IPERIODO_CONTABILServiceAppService _periodo_contabilAppService;
+        public PERIODO_CONTABILController(IPERIODO_CONTABILAppService periodo_contabilAppService) : base(periodo_contabilAppService)
+        {
+            _periodo_contabilAppService = PERIODO_CONTABILAppService;
+        }
+    }
+}

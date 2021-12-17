@@ -1,0 +1,16 @@
+Âusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IPRECO_FORMA_PAGAMENTORepository _preco_forma_pagamentoRepository;
+        public AnexoService(IPRECO_FORMA_PAGAMENTORepository preco_forma_pagamentoRepository) : base(preco_forma_pagamentoRepository)
+        {
+            _preco_forma_pagamentoRepository = preco_forma_pagamentoRepository;
+        }
+    }
+}

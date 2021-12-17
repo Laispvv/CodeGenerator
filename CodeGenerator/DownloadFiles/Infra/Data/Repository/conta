@@ -1,0 +1,14 @@
+ÿusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class CONTARepository : RepositoryBase<CONTA>, ICONTARepository
+    {
+        private readonly ApplicationDbContext _context;
+        public CONTARepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

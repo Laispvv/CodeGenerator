@@ -1,0 +1,14 @@
+Ïusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class INTEGRACAO_PARAMETRO_FICORepository : RepositoryBase<INTEGRACAO_PARAMETRO_FICO>, IINTEGRACAO_PARAMETRO_FICORepository
+    {
+        private readonly ApplicationDbContext _context;
+        public INTEGRACAO_PARAMETRO_FICORepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+Þusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class CONTRATO_PRECOAppService : ServiceBase<CONTRATO_PRECOViewModel, CONTRATO_PRECO>, ICONTRATO_PRECOAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly ICONTRATO_PRECOService _contrato_precoService;
+        public CONTRATO_PRECOAppService(IMapper mapper, ICONTRATO_PRECOService contrato_precoService) : base(mapper, contrato_precoService)
+        {
+            _mapper = mapper;
+            _contrato_precoService = contrato_precoService;
+        }
+    }
+}

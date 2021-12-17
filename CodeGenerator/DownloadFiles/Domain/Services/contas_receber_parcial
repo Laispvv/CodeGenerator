@@ -1,0 +1,16 @@
+Éusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly ICONTAS_RECEBER_PARCIALRepository _contas_receber_parcialRepository;
+        public AnexoService(ICONTAS_RECEBER_PARCIALRepository contas_receber_parcialRepository) : base(contas_receber_parcialRepository)
+        {
+            _contas_receber_parcialRepository = contas_receber_parcialRepository;
+        }
+    }
+}

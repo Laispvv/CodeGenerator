@@ -1,0 +1,20 @@
+Þusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class PRECO_DESCONTOAppService : ServiceBase<PRECO_DESCONTOViewModel, PRECO_DESCONTO>, IPRECO_DESCONTOAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IPRECO_DESCONTOService _preco_descontoService;
+        public PRECO_DESCONTOAppService(IMapper mapper, IPRECO_DESCONTOService preco_descontoService) : base(mapper, preco_descontoService)
+        {
+            _mapper = mapper;
+            _preco_descontoService = preco_descontoService;
+        }
+    }
+}

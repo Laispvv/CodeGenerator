@@ -1,0 +1,20 @@
+Æusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class ACERVO_AUTORAppService : ServiceBase<ACERVO_AUTORViewModel, ACERVO_AUTOR>, IACERVO_AUTORAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IACERVO_AUTORService _acervo_autorService;
+        public ACERVO_AUTORAppService(IMapper mapper, IACERVO_AUTORService acervo_autorService) : base(mapper, acervo_autorService)
+        {
+            _mapper = mapper;
+            _acervo_autorService = acervo_autorService;
+        }
+    }
+}

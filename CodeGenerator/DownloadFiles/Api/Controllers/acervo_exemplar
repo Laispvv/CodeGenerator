@@ -1,0 +1,17 @@
+Ðusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class ACERVO_EXEMPLARController : BaseController<ACERVO_EXEMPLARViewModel>
+    {
+        private readonly IACERVO_EXEMPLARServiceAppService _acervo_exemplarAppService;
+        public ACERVO_EXEMPLARController(IACERVO_EXEMPLARAppService acervo_exemplarAppService) : base(acervo_exemplarAppService)
+        {
+            _acervo_exemplarAppService = ACERVO_EXEMPLARAppService;
+        }
+    }
+}

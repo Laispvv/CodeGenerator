@@ -1,0 +1,14 @@
+Çusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class DOCUMENTO_CONTABIL_ITEMRepository : RepositoryBase<DOCUMENTO_CONTABIL_ITEM>, IDOCUMENTO_CONTABIL_ITEMRepository
+    {
+        private readonly ApplicationDbContext _context;
+        public DOCUMENTO_CONTABIL_ITEMRepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

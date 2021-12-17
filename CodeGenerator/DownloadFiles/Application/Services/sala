@@ -1,0 +1,20 @@
+æusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class SALAAppService : ServiceBase<SALAViewModel, SALA>, ISALAAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly ISALAService _salaService;
+        public SALAAppService(IMapper mapper, ISALAService salaService) : base(mapper, salaService)
+        {
+            _mapper = mapper;
+            _salaService = salaService;
+        }
+    }
+}

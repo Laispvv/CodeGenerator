@@ -1,0 +1,14 @@
+Çusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class REGRA_EMPRESTIMO_OBJETORepository : RepositoryBase<REGRA_EMPRESTIMO_OBJETO>, IREGRA_EMPRESTIMO_OBJETORepository
+    {
+        private readonly ApplicationDbContext _context;
+        public REGRA_EMPRESTIMO_OBJETORepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+ßusing hbhg.Application.Interfaces.Common;
+using hbhg.Application.ViewModels;
+
+namespace hbhg.Application.Interfaces
+{
+    public interface ILISTA_MATERIALAppService : IAppServicesBase<LISTA_MATERIALViewModel>
+    {
+    }
+}

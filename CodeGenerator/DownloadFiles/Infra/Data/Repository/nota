@@ -1,0 +1,14 @@
+ûusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class NOTARepository : RepositoryBase<NOTA>, INOTARepository
+    {
+        private readonly ApplicationDbContext _context;
+        public NOTARepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

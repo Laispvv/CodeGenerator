@@ -1,0 +1,17 @@
+€using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class USUARIOController : BaseController<USUARIOViewModel>
+    {
+        private readonly IUSUARIOServiceAppService _usuarioAppService;
+        public USUARIOController(IUSUARIOAppService usuarioAppService) : base(usuarioAppService)
+        {
+            _usuarioAppService = USUARIOAppService;
+        }
+    }
+}

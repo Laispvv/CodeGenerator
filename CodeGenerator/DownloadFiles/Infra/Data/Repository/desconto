@@ -1,0 +1,14 @@
+‹using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class DESCONTORepository : RepositoryBase<DESCONTO>, IDESCONTORepository
+    {
+        private readonly ApplicationDbContext _context;
+        public DESCONTORepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

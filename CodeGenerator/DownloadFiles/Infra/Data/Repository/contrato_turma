@@ -1,0 +1,14 @@
+£using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class CONTRATO_TURMARepository : RepositoryBase<CONTRATO_TURMA>, ICONTRATO_TURMARepository
+    {
+        private readonly ApplicationDbContext _context;
+        public CONTRATO_TURMARepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

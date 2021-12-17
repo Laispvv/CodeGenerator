@@ -1,0 +1,17 @@
+–using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class FECHAMENTO_CURSO_TURMAController : BaseController<FECHAMENTO_CURSO_TURMAViewModel>
+    {
+        private readonly IFECHAMENTO_CURSO_TURMAServiceAppService _fechamento_curso_turmaAppService;
+        public FECHAMENTO_CURSO_TURMAController(IFECHAMENTO_CURSO_TURMAAppService fechamento_curso_turmaAppService) : base(fechamento_curso_turmaAppService)
+        {
+            _fechamento_curso_turmaAppService = FECHAMENTO_CURSO_TURMAAppService;
+        }
+    }
+}

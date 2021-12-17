@@ -1,0 +1,35 @@
+﻿@model CodeGenerator.Models.TabelaViewModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <h1 class="display-4">Code Generator</h1>
+    <p>Programa de geração de códigos automático no padrão de projeto DDD.</p>
+    <br />
+    <p>Carregue um arquivo .csv com as tabelas que deverão ser geradas.</p>
+    <div>
+        <div class="form-body">
+            <div class="row">
+                <div class="form-holder">
+                    <div class="form-content">
+                        <div class="form-items">
+                            <form asp-action="Index" enctype="multipart/form-data" asp-controller="Home" class="requires-validation" method="post" novalidate>
+                                <div class="row col-md-12 mt-1">
+                                    <div class="col-md-10">
+                                       <input class="form-control" type="file" name="file" placeholder="Arquivo do banco de dados." required>
+                                       <div class="valid-feedback">Arquivo inválido.</div>
+                                       <div class="invalid-feedback">Arquivo deve ser preenchido.</div>
+                                    </div> 
+                                    <div class="col-md-2">
+                                        <button id="carregarTabelasButton" type="submit" class="btn btn-primary">Carregar tabelas</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

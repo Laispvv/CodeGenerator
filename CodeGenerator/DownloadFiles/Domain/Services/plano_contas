@@ -1,0 +1,16 @@
+ƒusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IPLANO_CONTASRepository _plano_contasRepository;
+        public AnexoService(IPLANO_CONTASRepository plano_contasRepository) : base(plano_contasRepository)
+        {
+            _plano_contasRepository = plano_contasRepository;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+‹using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class MENSAGEMRepository : RepositoryBase<MENSAGEM>, IMENSAGEMRepository
+    {
+        private readonly ApplicationDbContext _context;
+        public MENSAGEMRepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

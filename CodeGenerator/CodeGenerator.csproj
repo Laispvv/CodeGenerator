@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.14.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DownloadFiles\Api\Controllers\" />
+    <Folder Include="DownloadFiles\Application\Interfaces\" />
+    <Folder Include="DownloadFiles\Application\" />
+    <Folder Include="DownloadFiles\Domain\Interfaces\Services\" />
+    <Folder Include="DownloadFiles\Domain\Interfaces\Repository\" />
+    <Folder Include="DownloadFiles\Domain\Services\" />
+    <Folder Include="DownloadFiles\Api\" />
+    <Folder Include="DownloadFiles\Infra\Data\" />
+    <Folder Include="DownloadFiles\Infra\Data\Repository\" />
+    <Folder Include="DownloadFiles\Application\Services\" />
+    <Folder Include="CreatedZipFile\" />
+  </ItemGroup>
+
+</Project>

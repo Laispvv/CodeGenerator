@@ -1,0 +1,9 @@
+ßusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service.Common;
+
+namespace hbhg.Domain.Interfaces.Service
+{
+    public interface IDOCUMENTO_CONTABIL_ITEMService : IServiceBase<DOCUMENTO_CONTABIL_ITEM>
+    {
+    }
+}

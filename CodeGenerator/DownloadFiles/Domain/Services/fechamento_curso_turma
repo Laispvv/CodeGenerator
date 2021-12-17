@@ -1,0 +1,16 @@
+Éusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IFECHAMENTO_CURSO_TURMARepository _fechamento_curso_turmaRepository;
+        public AnexoService(IFECHAMENTO_CURSO_TURMARepository fechamento_curso_turmaRepository) : base(fechamento_curso_turmaRepository)
+        {
+            _fechamento_curso_turmaRepository = fechamento_curso_turmaRepository;
+        }
+    }
+}

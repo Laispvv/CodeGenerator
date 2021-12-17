@@ -1,0 +1,14 @@
+Ÿusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class BANCO_REMESSARepository : RepositoryBase<BANCO_REMESSA>, IBANCO_REMESSARepository
+    {
+        private readonly ApplicationDbContext _context;
+        public BANCO_REMESSARepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

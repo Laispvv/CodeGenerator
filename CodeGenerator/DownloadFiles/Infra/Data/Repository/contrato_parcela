@@ -1,0 +1,14 @@
+«using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class CONTRATO_PARCELARepository : RepositoryBase<CONTRATO_PARCELA>, ICONTRATO_PARCELARepository
+    {
+        private readonly ApplicationDbContext _context;
+        public CONTRATO_PARCELARepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

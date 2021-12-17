@@ -1,0 +1,17 @@
+äusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class CONTRATO_DESCONTOController : BaseController<CONTRATO_DESCONTOViewModel>
+    {
+        private readonly ICONTRATO_DESCONTOServiceAppService _contrato_descontoAppService;
+        public CONTRATO_DESCONTOController(ICONTRATO_DESCONTOAppService contrato_descontoAppService) : base(contrato_descontoAppService)
+        {
+            _contrato_descontoAppService = CONTRATO_DESCONTOAppService;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+‚using AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class ESTOQUE_MOVIMENTOAppService : ServiceBase<ESTOQUE_MOVIMENTOViewModel, ESTOQUE_MOVIMENTO>, IESTOQUE_MOVIMENTOAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IESTOQUE_MOVIMENTOService _estoque_movimentoService;
+        public ESTOQUE_MOVIMENTOAppService(IMapper mapper, IESTOQUE_MOVIMENTOService estoque_movimentoService) : base(mapper, estoque_movimentoService)
+        {
+            _mapper = mapper;
+            _estoque_movimentoService = estoque_movimentoService;
+        }
+    }
+}

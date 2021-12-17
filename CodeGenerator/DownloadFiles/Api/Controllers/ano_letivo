@@ -1,0 +1,17 @@
+žusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class ANO_LETIVOController : BaseController<ANO_LETIVOViewModel>
+    {
+        private readonly IANO_LETIVOServiceAppService _ano_letivoAppService;
+        public ANO_LETIVOController(IANO_LETIVOAppService ano_letivoAppService) : base(ano_letivoAppService)
+        {
+            _ano_letivoAppService = ANO_LETIVOAppService;
+        }
+    }
+}

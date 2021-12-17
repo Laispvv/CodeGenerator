@@ -1,0 +1,17 @@
+–using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class ANO_LETIVO_SEGMENTACAOController : BaseController<ANO_LETIVO_SEGMENTACAOViewModel>
+    {
+        private readonly IANO_LETIVO_SEGMENTACAOServiceAppService _ano_letivo_segmentacaoAppService;
+        public ANO_LETIVO_SEGMENTACAOController(IANO_LETIVO_SEGMENTACAOAppService ano_letivo_segmentacaoAppService) : base(ano_letivo_segmentacaoAppService)
+        {
+            _ano_letivo_segmentacaoAppService = ANO_LETIVO_SEGMENTACAOAppService;
+        }
+    }
+}

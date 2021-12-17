@@ -1,0 +1,14 @@
+‹using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class TRABALHORepository : RepositoryBase<TRABALHO>, ITRABALHORepository
+    {
+        private readonly ApplicationDbContext _context;
+        public TRABALHORepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

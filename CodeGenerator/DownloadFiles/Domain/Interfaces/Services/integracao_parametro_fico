@@ -1,0 +1,9 @@
+ãusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service.Common;
+
+namespace hbhg.Domain.Interfaces.Service
+{
+    public interface IINTEGRACAO_PARAMETRO_FICOService : IServiceBase<INTEGRACAO_PARAMETRO_FICO>
+    {
+    }
+}

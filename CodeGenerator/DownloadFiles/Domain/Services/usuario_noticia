@@ -1,0 +1,16 @@
+˜using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IUSUARIO_NOTICIARepository _usuario_noticiaRepository;
+        public AnexoService(IUSUARIO_NOTICIARepository usuario_noticiaRepository) : base(usuario_noticiaRepository)
+        {
+            _usuario_noticiaRepository = usuario_noticiaRepository;
+        }
+    }
+}

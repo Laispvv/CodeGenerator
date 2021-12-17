@@ -1,0 +1,16 @@
+Éusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IANO_LETIVO_SEGMENTACAORepository _ano_letivo_segmentacaoRepository;
+        public AnexoService(IANO_LETIVO_SEGMENTACAORepository ano_letivo_segmentacaoRepository) : base(ano_letivo_segmentacaoRepository)
+        {
+            _ano_letivo_segmentacaoRepository = ano_letivo_segmentacaoRepository;
+        }
+    }
+}

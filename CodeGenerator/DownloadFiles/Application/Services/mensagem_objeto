@@ -1,0 +1,20 @@
+êusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class MENSAGEM_OBJETOAppService : ServiceBase<MENSAGEM_OBJETOViewModel, MENSAGEM_OBJETO>, IMENSAGEM_OBJETOAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IMENSAGEM_OBJETOService _mensagem_objetoService;
+        public MENSAGEM_OBJETOAppService(IMapper mapper, IMENSAGEM_OBJETOService mensagem_objetoService) : base(mapper, mensagem_objetoService)
+        {
+            _mapper = mapper;
+            _mensagem_objetoService = mensagem_objetoService;
+        }
+    }
+}

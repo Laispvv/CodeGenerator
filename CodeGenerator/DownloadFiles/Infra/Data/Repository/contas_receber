@@ -1,0 +1,14 @@
+£using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class CONTAS_RECEBERRepository : RepositoryBase<CONTAS_RECEBER>, ICONTAS_RECEBERRepository
+    {
+        private readonly ApplicationDbContext _context;
+        public CONTAS_RECEBERRepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

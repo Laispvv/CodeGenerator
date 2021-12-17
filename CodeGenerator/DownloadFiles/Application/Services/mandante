@@ -1,0 +1,20 @@
+–using AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class MANDANTEAppService : ServiceBase<MANDANTEViewModel, MANDANTE>, IMANDANTEAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IMANDANTEService _mandanteService;
+        public MANDANTEAppService(IMapper mapper, IMANDANTEService mandanteService) : base(mapper, mandanteService)
+        {
+            _mapper = mapper;
+            _mandanteService = mandanteService;
+        }
+    }
+}

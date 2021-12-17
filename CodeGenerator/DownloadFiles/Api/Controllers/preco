@@ -1,0 +1,17 @@
+ìusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class PRECOController : BaseController<PRECOViewModel>
+    {
+        private readonly IPRECOServiceAppService _precoAppService;
+        public PRECOController(IPRECOAppService precoAppService) : base(precoAppService)
+        {
+            _precoAppService = PRECOAppService;
+        }
+    }
+}

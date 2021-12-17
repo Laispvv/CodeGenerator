@@ -1,0 +1,14 @@
+ƒusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class PESSOARepository : RepositoryBase<PESSOA>, IPESSOARepository
+    {
+        private readonly ApplicationDbContext _context;
+        public PESSOARepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+›using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class CONTAS_PAGARRepository : RepositoryBase<CONTAS_PAGAR>, ICONTAS_PAGARRepository
+    {
+        private readonly ApplicationDbContext _context;
+        public CONTAS_PAGARRepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

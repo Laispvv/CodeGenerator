@@ -1,0 +1,9 @@
+Ôusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository.Common;
+
+namespace hbhg.Domain.Interfaces.Repository
+{
+    public interface ITIPO_ACERVORepository : IRepositoryBase<TIPO_ACERVO>
+    {
+    }
+}

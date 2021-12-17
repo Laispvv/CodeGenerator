@@ -1,0 +1,9 @@
+Íusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service.Common;
+
+namespace hbhg.Domain.Interfaces.Service
+{
+    public interface ICONTRATO_TURMAService : IServiceBase<CONTRATO_TURMA>
+    {
+    }
+}

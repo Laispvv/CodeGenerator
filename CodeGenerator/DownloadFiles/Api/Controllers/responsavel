@@ -1,0 +1,17 @@
+¨using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class RESPONSAVELController : BaseController<RESPONSAVELViewModel>
+    {
+        private readonly IRESPONSAVELServiceAppService _responsavelAppService;
+        public RESPONSAVELController(IRESPONSAVELAppService responsavelAppService) : base(responsavelAppService)
+        {
+            _responsavelAppService = RESPONSAVELAppService;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+®using AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class FREQUENCIAAppService : ServiceBase<FREQUENCIAViewModel, FREQUENCIA>, IFREQUENCIAAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IFREQUENCIAService _frequenciaService;
+        public FREQUENCIAAppService(IMapper mapper, IFREQUENCIAService frequenciaService) : base(mapper, frequenciaService)
+        {
+            _mapper = mapper;
+            _frequenciaService = frequenciaService;
+        }
+    }
+}

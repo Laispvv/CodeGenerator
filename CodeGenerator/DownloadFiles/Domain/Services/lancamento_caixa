@@ -1,0 +1,16 @@
+Ÿusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly ILANCAMENTO_CAIXARepository _lancamento_caixaRepository;
+        public AnexoService(ILANCAMENTO_CAIXARepository lancamento_caixaRepository) : base(lancamento_caixaRepository)
+        {
+            _lancamento_caixaRepository = lancamento_caixaRepository;
+        }
+    }
+}

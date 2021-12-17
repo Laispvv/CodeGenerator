@@ -1,0 +1,16 @@
+­using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IPARECER_DESCRITIVORepository _parecer_descritivoRepository;
+        public AnexoService(IPARECER_DESCRITIVORepository parecer_descritivoRepository) : base(parecer_descritivoRepository)
+        {
+            _parecer_descritivoRepository = parecer_descritivoRepository;
+        }
+    }
+}

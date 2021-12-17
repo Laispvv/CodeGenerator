@@ -1,0 +1,17 @@
+¼using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class BANCO_REMESSAController : BaseController<BANCO_REMESSAViewModel>
+    {
+        private readonly IBANCO_REMESSAServiceAppService _banco_remessaAppService;
+        public BANCO_REMESSAController(IBANCO_REMESSAAppService banco_remessaAppService) : base(banco_remessaAppService)
+        {
+            _banco_remessaAppService = BANCO_REMESSAAppService;
+        }
+    }
+}

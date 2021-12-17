@@ -1,0 +1,20 @@
+¾using AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class ANO_LETIVO_SEGMENTACAOAppService : ServiceBase<ANO_LETIVO_SEGMENTACAOViewModel, ANO_LETIVO_SEGMENTACAO>, IANO_LETIVO_SEGMENTACAOAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IANO_LETIVO_SEGMENTACAOService _ano_letivo_segmentacaoService;
+        public ANO_LETIVO_SEGMENTACAOAppService(IMapper mapper, IANO_LETIVO_SEGMENTACAOService ano_letivo_segmentacaoService) : base(mapper, ano_letivo_segmentacaoService)
+        {
+            _mapper = mapper;
+            _ano_letivo_segmentacaoService = ano_letivo_segmentacaoService;
+        }
+    }
+}

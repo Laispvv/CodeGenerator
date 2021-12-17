@@ -1,0 +1,17 @@
+îusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class ANO_LETIVO_DOCENTEController : BaseController<ANO_LETIVO_DOCENTEViewModel>
+    {
+        private readonly IANO_LETIVO_DOCENTEServiceAppService _ano_letivo_docenteAppService;
+        public ANO_LETIVO_DOCENTEController(IANO_LETIVO_DOCENTEAppService ano_letivo_docenteAppService) : base(ano_letivo_docenteAppService)
+        {
+            _ano_letivo_docenteAppService = ANO_LETIVO_DOCENTEAppService;
+        }
+    }
+}

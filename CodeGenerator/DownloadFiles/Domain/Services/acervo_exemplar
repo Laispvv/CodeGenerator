@@ -1,0 +1,16 @@
+˜using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IACERVO_EXEMPLARRepository _acervo_exemplarRepository;
+        public AnexoService(IACERVO_EXEMPLARRepository acervo_exemplarRepository) : base(acervo_exemplarRepository)
+        {
+            _acervo_exemplarRepository = acervo_exemplarRepository;
+        }
+    }
+}

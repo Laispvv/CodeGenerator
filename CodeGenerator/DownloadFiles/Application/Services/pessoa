@@ -1,0 +1,20 @@
+þusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class PESSOAAppService : ServiceBase<PESSOAViewModel, PESSOA>, IPESSOAAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IPESSOAService _pessoaService;
+        public PESSOAAppService(IMapper mapper, IPESSOAService pessoaService) : base(mapper, pessoaService)
+        {
+            _mapper = mapper;
+            _pessoaService = pessoaService;
+        }
+    }
+}

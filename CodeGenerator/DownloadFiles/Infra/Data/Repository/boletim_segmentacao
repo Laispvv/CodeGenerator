@@ -1,0 +1,14 @@
+·using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class BOLETIM_SEGMENTACAORepository : RepositoryBase<BOLETIM_SEGMENTACAO>, IBOLETIM_SEGMENTACAORepository
+    {
+        private readonly ApplicationDbContext _context;
+        public BOLETIM_SEGMENTACAORepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

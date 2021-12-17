@@ -1,0 +1,16 @@
+Âusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IBANCO_REMESSA_DETALHERepository _banco_remessa_detalheRepository;
+        public AnexoService(IBANCO_REMESSA_DETALHERepository banco_remessa_detalheRepository) : base(banco_remessa_detalheRepository)
+        {
+            _banco_remessa_detalheRepository = banco_remessa_detalheRepository;
+        }
+    }
+}

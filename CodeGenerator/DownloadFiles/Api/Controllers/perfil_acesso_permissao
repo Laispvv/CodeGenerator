@@ -1,0 +1,17 @@
+ using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class PERFIL_ACESSO_PERMISSAOController : BaseController<PERFIL_ACESSO_PERMISSAOViewModel>
+    {
+        private readonly IPERFIL_ACESSO_PERMISSAOServiceAppService _perfil_acesso_permissaoAppService;
+        public PERFIL_ACESSO_PERMISSAOController(IPERFIL_ACESSO_PERMISSAOAppService perfil_acesso_permissaoAppService) : base(perfil_acesso_permissaoAppService)
+        {
+            _perfil_acesso_permissaoAppService = PERFIL_ACESSO_PERMISSAOAppService;
+        }
+    }
+}

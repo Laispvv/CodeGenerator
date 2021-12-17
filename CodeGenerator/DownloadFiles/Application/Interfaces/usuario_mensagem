@@ -1,0 +1,9 @@
+ãusing hbhg.Application.Interfaces.Common;
+using hbhg.Application.ViewModels;
+
+namespace hbhg.Application.Interfaces
+{
+    public interface IUSUARIO_MENSAGEMAppService : IAppServicesBase<USUARIO_MENSAGEMViewModel>
+    {
+    }
+}

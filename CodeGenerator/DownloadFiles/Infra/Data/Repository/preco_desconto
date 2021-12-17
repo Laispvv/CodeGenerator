@@ -1,0 +1,14 @@
+£using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class PRECO_DESCONTORepository : RepositoryBase<PRECO_DESCONTO>, IPRECO_DESCONTORepository
+    {
+        private readonly ApplicationDbContext _context;
+        public PRECO_DESCONTORepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

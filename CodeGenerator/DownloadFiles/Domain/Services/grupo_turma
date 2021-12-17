@@ -1,0 +1,16 @@
+üusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IGRUPO_TURMARepository _grupo_turmaRepository;
+        public AnexoService(IGRUPO_TURMARepository grupo_turmaRepository) : base(grupo_turmaRepository)
+        {
+            _grupo_turmaRepository = grupo_turmaRepository;
+        }
+    }
+}

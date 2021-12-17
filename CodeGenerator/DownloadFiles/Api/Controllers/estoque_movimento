@@ -1,0 +1,17 @@
+äusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class ESTOQUE_MOVIMENTOController : BaseController<ESTOQUE_MOVIMENTOViewModel>
+    {
+        private readonly IESTOQUE_MOVIMENTOServiceAppService _estoque_movimentoAppService;
+        public ESTOQUE_MOVIMENTOController(IESTOQUE_MOVIMENTOAppService estoque_movimentoAppService) : base(estoque_movimentoAppService)
+        {
+            _estoque_movimentoAppService = ESTOQUE_MOVIMENTOAppService;
+        }
+    }
+}

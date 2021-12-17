@@ -1,0 +1,17 @@
+žusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class PRECO_TAXAController : BaseController<PRECO_TAXAViewModel>
+    {
+        private readonly IPRECO_TAXAServiceAppService _preco_taxaAppService;
+        public PRECO_TAXAController(IPRECO_TAXAAppService preco_taxaAppService) : base(preco_taxaAppService)
+        {
+            _preco_taxaAppService = PRECO_TAXAAppService;
+        }
+    }
+}

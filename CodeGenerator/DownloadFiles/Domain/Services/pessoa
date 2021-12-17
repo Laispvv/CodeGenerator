@@ -1,0 +1,16 @@
+Ùusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IPESSOARepository _pessoaRepository;
+        public AnexoService(IPESSOARepository pessoaRepository) : base(pessoaRepository)
+        {
+            _pessoaRepository = pessoaRepository;
+        }
+    }
+}

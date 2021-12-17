@@ -1,0 +1,9 @@
+ßusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service.Common;
+
+namespace hbhg.Domain.Interfaces.Service
+{
+    public interface IPERFIL_ACESSO_PERMISSAOService : IServiceBase<PERFIL_ACESSO_PERMISSAO>
+    {
+    }
+}

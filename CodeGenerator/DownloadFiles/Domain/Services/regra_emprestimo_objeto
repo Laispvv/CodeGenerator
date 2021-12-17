@@ -1,0 +1,16 @@
+Ðusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IREGRA_EMPRESTIMO_OBJETORepository _regra_emprestimo_objetoRepository;
+        public AnexoService(IREGRA_EMPRESTIMO_OBJETORepository regra_emprestimo_objetoRepository) : base(regra_emprestimo_objetoRepository)
+        {
+            _regra_emprestimo_objetoRepository = regra_emprestimo_objetoRepository;
+        }
+    }
+}

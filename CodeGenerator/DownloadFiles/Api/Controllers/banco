@@ -1,0 +1,17 @@
+ìusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class BANCOController : BaseController<BANCOViewModel>
+    {
+        private readonly IBANCOServiceAppService _bancoAppService;
+        public BANCOController(IBANCOAppService bancoAppService) : base(bancoAppService)
+        {
+            _bancoAppService = BANCOAppService;
+        }
+    }
+}

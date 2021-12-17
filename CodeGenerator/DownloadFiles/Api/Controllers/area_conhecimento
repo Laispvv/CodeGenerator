@@ -1,0 +1,17 @@
+äusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class AREA_CONHECIMENTOController : BaseController<AREA_CONHECIMENTOViewModel>
+    {
+        private readonly IAREA_CONHECIMENTOServiceAppService _area_conhecimentoAppService;
+        public AREA_CONHECIMENTOController(IAREA_CONHECIMENTOAppService area_conhecimentoAppService) : base(area_conhecimentoAppService)
+        {
+            _area_conhecimentoAppService = AREA_CONHECIMENTOAppService;
+        }
+    }
+}

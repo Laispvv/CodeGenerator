@@ -1,0 +1,20 @@
+Žusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class ANO_LETIVO_DOCENTEAppService : ServiceBase<ANO_LETIVO_DOCENTEViewModel, ANO_LETIVO_DOCENTE>, IANO_LETIVO_DOCENTEAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IANO_LETIVO_DOCENTEService _ano_letivo_docenteService;
+        public ANO_LETIVO_DOCENTEAppService(IMapper mapper, IANO_LETIVO_DOCENTEService ano_letivo_docenteService) : base(mapper, ano_letivo_docenteService)
+        {
+            _mapper = mapper;
+            _ano_letivo_docenteService = ano_letivo_docenteService;
+        }
+    }
+}

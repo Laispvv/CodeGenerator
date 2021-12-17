@@ -1,0 +1,14 @@
+‹using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class ENDERECORepository : RepositoryBase<ENDERECO>, IENDERECORepository
+    {
+        private readonly ApplicationDbContext _context;
+        public ENDERECORepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

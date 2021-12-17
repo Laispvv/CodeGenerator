@@ -1,0 +1,17 @@
+îusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class TURMA_PREREQUISITOController : BaseController<TURMA_PREREQUISITOViewModel>
+    {
+        private readonly ITURMA_PREREQUISITOServiceAppService _turma_prerequisitoAppService;
+        public TURMA_PREREQUISITOController(ITURMA_PREREQUISITOAppService turma_prerequisitoAppService) : base(turma_prerequisitoAppService)
+        {
+            _turma_prerequisitoAppService = TURMA_PREREQUISITOAppService;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+åusing hbhg.Application.Interfaces.Common;
+using hbhg.Application.ViewModels;
+
+namespace hbhg.Application.Interfaces
+{
+    public interface IAREA_CONHECIMENTOAppService : IAppServicesBase<AREA_CONHECIMENTOViewModel>
+    {
+    }
+}

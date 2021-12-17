@@ -1,0 +1,9 @@
+íusing hbhg.Application.Interfaces.Common;
+using hbhg.Application.ViewModels;
+
+namespace hbhg.Application.Interfaces
+{
+    public interface IINSCRICAO_CERTIFICADOAppService : IAppServicesBase<INSCRICAO_CERTIFICADOViewModel>
+    {
+    }
+}

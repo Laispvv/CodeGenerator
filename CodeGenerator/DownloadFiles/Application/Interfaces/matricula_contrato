@@ -1,0 +1,9 @@
+çusing hbhg.Application.Interfaces.Common;
+using hbhg.Application.ViewModels;
+
+namespace hbhg.Application.Interfaces
+{
+    public interface IMATRICULA_CONTRATOAppService : IAppServicesBase<MATRICULA_CONTRATOViewModel>
+    {
+    }
+}

@@ -1,0 +1,9 @@
+ìusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository.Common;
+
+namespace hbhg.Domain.Interfaces.Repository
+{
+    public interface IPERFIL_ACESSO_PERMISSAORepository : IRepositoryBase<PERFIL_ACESSO_PERMISSAO>
+    {
+    }
+}

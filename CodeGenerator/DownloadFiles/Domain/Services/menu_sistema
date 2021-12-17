@@ -1,0 +1,16 @@
+ƒusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IMENU_SISTEMARepository _menu_sistemaRepository;
+        public AnexoService(IMENU_SISTEMARepository menu_sistemaRepository) : base(menu_sistemaRepository)
+        {
+            _menu_sistemaRepository = menu_sistemaRepository;
+        }
+    }
+}

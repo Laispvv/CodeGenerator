@@ -1,0 +1,20 @@
+®using AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class PRECO_TAXAAppService : ServiceBase<PRECO_TAXAViewModel, PRECO_TAXA>, IPRECO_TAXAAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IPRECO_TAXAService _preco_taxaService;
+        public PRECO_TAXAAppService(IMapper mapper, IPRECO_TAXAService preco_taxaService) : base(mapper, preco_taxaService)
+        {
+            _mapper = mapper;
+            _preco_taxaService = preco_taxaService;
+        }
+    }
+}

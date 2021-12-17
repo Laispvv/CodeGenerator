@@ -1,0 +1,17 @@
+Œusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class INSCRICAO_CERTIFICADOController : BaseController<INSCRICAO_CERTIFICADOViewModel>
+    {
+        private readonly IINSCRICAO_CERTIFICADOServiceAppService _inscricao_certificadoAppService;
+        public INSCRICAO_CERTIFICADOController(IINSCRICAO_CERTIFICADOAppService inscricao_certificadoAppService) : base(inscricao_certificadoAppService)
+        {
+            _inscricao_certificadoAppService = INSCRICAO_CERTIFICADOAppService;
+        }
+    }
+}

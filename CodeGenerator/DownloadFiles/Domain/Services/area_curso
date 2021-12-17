@@ -1,0 +1,16 @@
+õusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IAREA_CURSORepository _area_cursoRepository;
+        public AnexoService(IAREA_CURSORepository area_cursoRepository) : base(area_cursoRepository)
+        {
+            _area_cursoRepository = area_cursoRepository;
+        }
+    }
+}

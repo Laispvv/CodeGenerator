@@ -1,0 +1,17 @@
+âusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class SALAController : BaseController<SALAViewModel>
+    {
+        private readonly ISALAServiceAppService _salaAppService;
+        public SALAController(ISALAAppService salaAppService) : base(salaAppService)
+        {
+            _salaAppService = SALAAppService;
+        }
+    }
+}

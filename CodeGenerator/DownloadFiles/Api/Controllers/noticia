@@ -1,0 +1,17 @@
+€using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class NOTICIAController : BaseController<NOTICIAViewModel>
+    {
+        private readonly INOTICIAServiceAppService _noticiaAppService;
+        public NOTICIAController(INOTICIAAppService noticiaAppService) : base(noticiaAppService)
+        {
+            _noticiaAppService = NOTICIAAppService;
+        }
+    }
+}

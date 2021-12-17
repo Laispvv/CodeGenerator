@@ -1,0 +1,20 @@
+¦using AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class ANO_LETIVO_AVALIACAOAppService : ServiceBase<ANO_LETIVO_AVALIACAOViewModel, ANO_LETIVO_AVALIACAO>, IANO_LETIVO_AVALIACAOAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IANO_LETIVO_AVALIACAOService _ano_letivo_avaliacaoService;
+        public ANO_LETIVO_AVALIACAOAppService(IMapper mapper, IANO_LETIVO_AVALIACAOService ano_letivo_avaliacaoService) : base(mapper, ano_letivo_avaliacaoService)
+        {
+            _mapper = mapper;
+            _ano_letivo_avaliacaoService = ano_letivo_avaliacaoService;
+        }
+    }
+}

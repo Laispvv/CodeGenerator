@@ -1,0 +1,9 @@
+áusing hbhg.Application.Interfaces.Common;
+using hbhg.Application.ViewModels;
+
+namespace hbhg.Application.Interfaces
+{
+    public interface IFORMA_PAGAMENTOAppService : IAppServicesBase<FORMA_PAGAMENTOViewModel>
+    {
+    }
+}

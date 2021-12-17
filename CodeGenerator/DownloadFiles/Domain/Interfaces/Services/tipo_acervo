@@ -1,0 +1,9 @@
+Çusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service.Common;
+
+namespace hbhg.Domain.Interfaces.Service
+{
+    public interface ITIPO_ACERVOService : IServiceBase<TIPO_ACERVO>
+    {
+    }
+}

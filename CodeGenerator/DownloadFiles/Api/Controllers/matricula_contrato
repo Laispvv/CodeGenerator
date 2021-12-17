@@ -1,0 +1,17 @@
+îusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class MATRICULA_CONTRATOController : BaseController<MATRICULA_CONTRATOViewModel>
+    {
+        private readonly IMATRICULA_CONTRATOServiceAppService _matricula_contratoAppService;
+        public MATRICULA_CONTRATOController(IMATRICULA_CONTRATOAppService matricula_contratoAppService) : base(matricula_contratoAppService)
+        {
+            _matricula_contratoAppService = MATRICULA_CONTRATOAppService;
+        }
+    }
+}

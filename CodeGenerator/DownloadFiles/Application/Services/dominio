@@ -1,0 +1,20 @@
+Šusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class DOMINIOAppService : ServiceBase<DOMINIOViewModel, DOMINIO>, IDOMINIOAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IDOMINIOService _dominioService;
+        public DOMINIOAppService(IMapper mapper, IDOMINIOService dominioService) : base(mapper, dominioService)
+        {
+            _mapper = mapper;
+            _dominioService = dominioService;
+        }
+    }
+}

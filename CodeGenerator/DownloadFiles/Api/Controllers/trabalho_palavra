@@ -1,0 +1,17 @@
+Úusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class TRABALHO_PALAVRAController : BaseController<TRABALHO_PALAVRAViewModel>
+    {
+        private readonly ITRABALHO_PALAVRAServiceAppService _trabalho_palavraAppService;
+        public TRABALHO_PALAVRAController(ITRABALHO_PALAVRAAppService trabalho_palavraAppService) : base(trabalho_palavraAppService)
+        {
+            _trabalho_palavraAppService = TRABALHO_PALAVRAAppService;
+        }
+    }
+}

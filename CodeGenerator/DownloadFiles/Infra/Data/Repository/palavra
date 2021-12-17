@@ -1,0 +1,14 @@
+‡using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class PALAVRARepository : RepositoryBase<PALAVRA>, IPALAVRARepository
+    {
+        private readonly ApplicationDbContext _context;
+        public PALAVRARepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+‘using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly ILISTA_MATERIALRepository _lista_materialRepository;
+        public AnexoService(ILISTA_MATERIALRepository lista_materialRepository) : base(lista_materialRepository)
+        {
+            _lista_materialRepository = lista_materialRepository;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+Žusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class PRODUTO_FORNECEDORAppService : ServiceBase<PRODUTO_FORNECEDORViewModel, PRODUTO_FORNECEDOR>, IPRODUTO_FORNECEDORAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IPRODUTO_FORNECEDORService _produto_fornecedorService;
+        public PRODUTO_FORNECEDORAppService(IMapper mapper, IPRODUTO_FORNECEDORService produto_fornecedorService) : base(mapper, produto_fornecedorService)
+        {
+            _mapper = mapper;
+            _produto_fornecedorService = produto_fornecedorService;
+        }
+    }
+}

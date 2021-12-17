@@ -1,0 +1,17 @@
+¼using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class CONTRATO_TAXAController : BaseController<CONTRATO_TAXAViewModel>
+    {
+        private readonly ICONTRATO_TAXAServiceAppService _contrato_taxaAppService;
+        public CONTRATO_TAXAController(ICONTRATO_TAXAAppService contrato_taxaAppService) : base(contrato_taxaAppService)
+        {
+            _contrato_taxaAppService = CONTRATO_TAXAAppService;
+        }
+    }
+}

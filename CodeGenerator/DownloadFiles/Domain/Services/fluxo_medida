@@ -1,0 +1,16 @@
+ƒusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IFLUXO_MEDIDARepository _fluxo_medidaRepository;
+        public AnexoService(IFLUXO_MEDIDARepository fluxo_medidaRepository) : base(fluxo_medidaRepository)
+        {
+            _fluxo_medidaRepository = fluxo_medidaRepository;
+        }
+    }
+}

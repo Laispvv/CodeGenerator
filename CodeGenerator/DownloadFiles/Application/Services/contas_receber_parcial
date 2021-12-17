@@ -1,0 +1,20 @@
+¾using AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class CONTAS_RECEBER_PARCIALAppService : ServiceBase<CONTAS_RECEBER_PARCIALViewModel, CONTAS_RECEBER_PARCIAL>, ICONTAS_RECEBER_PARCIALAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly ICONTAS_RECEBER_PARCIALService _contas_receber_parcialService;
+        public CONTAS_RECEBER_PARCIALAppService(IMapper mapper, ICONTAS_RECEBER_PARCIALService contas_receber_parcialService) : base(mapper, contas_receber_parcialService)
+        {
+            _mapper = mapper;
+            _contas_receber_parcialService = contas_receber_parcialService;
+        }
+    }
+}

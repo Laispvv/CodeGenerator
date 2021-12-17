@@ -1,0 +1,17 @@
+Úusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class ANO_LETIVO_TURMAController : BaseController<ANO_LETIVO_TURMAViewModel>
+    {
+        private readonly IANO_LETIVO_TURMAServiceAppService _ano_letivo_turmaAppService;
+        public ANO_LETIVO_TURMAController(IANO_LETIVO_TURMAAppService ano_letivo_turmaAppService) : base(ano_letivo_turmaAppService)
+        {
+            _ano_letivo_turmaAppService = ANO_LETIVO_TURMAAppService;
+        }
+    }
+}

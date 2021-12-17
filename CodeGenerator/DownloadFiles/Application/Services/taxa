@@ -1,0 +1,20 @@
+æusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class TAXAAppService : ServiceBase<TAXAViewModel, TAXA>, ITAXAAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly ITAXAService _taxaService;
+        public TAXAAppService(IMapper mapper, ITAXAService taxaService) : base(mapper, taxaService)
+        {
+            _mapper = mapper;
+            _taxaService = taxaService;
+        }
+    }
+}

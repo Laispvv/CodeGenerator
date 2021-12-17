@@ -1,0 +1,16 @@
+îusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IAVALIACAORepository _avaliacaoRepository;
+        public AnexoService(IAVALIACAORepository avaliacaoRepository) : base(avaliacaoRepository)
+        {
+            _avaliacaoRepository = avaliacaoRepository;
+        }
+    }
+}

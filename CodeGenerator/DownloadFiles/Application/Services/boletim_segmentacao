@@ -1,0 +1,20 @@
+šusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class BOLETIM_SEGMENTACAOAppService : ServiceBase<BOLETIM_SEGMENTACAOViewModel, BOLETIM_SEGMENTACAO>, IBOLETIM_SEGMENTACAOAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IBOLETIM_SEGMENTACAOService _boletim_segmentacaoService;
+        public BOLETIM_SEGMENTACAOAppService(IMapper mapper, IBOLETIM_SEGMENTACAOService boletim_segmentacaoService) : base(mapper, boletim_segmentacaoService)
+        {
+            _mapper = mapper;
+            _boletim_segmentacaoService = boletim_segmentacaoService;
+        }
+    }
+}

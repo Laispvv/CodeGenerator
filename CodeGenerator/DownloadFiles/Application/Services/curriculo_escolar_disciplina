@@ -1,0 +1,20 @@
+†using AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class CURRICULO_ESCOLAR_DISCIPLINAAppService : ServiceBase<CURRICULO_ESCOLAR_DISCIPLINAViewModel, CURRICULO_ESCOLAR_DISCIPLINA>, ICURRICULO_ESCOLAR_DISCIPLINAAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly ICURRICULO_ESCOLAR_DISCIPLINAService _curriculo_escolar_disciplinaService;
+        public CURRICULO_ESCOLAR_DISCIPLINAAppService(IMapper mapper, ICURRICULO_ESCOLAR_DISCIPLINAService curriculo_escolar_disciplinaService) : base(mapper, curriculo_escolar_disciplinaService)
+        {
+            _mapper = mapper;
+            _curriculo_escolar_disciplinaService = curriculo_escolar_disciplinaService;
+        }
+    }
+}

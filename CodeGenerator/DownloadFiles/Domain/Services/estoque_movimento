@@ -1,0 +1,16 @@
+¦using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IESTOQUE_MOVIMENTORepository _estoque_movimentoRepository;
+        public AnexoService(IESTOQUE_MOVIMENTORepository estoque_movimentoRepository) : base(estoque_movimentoRepository)
+        {
+            _estoque_movimentoRepository = estoque_movimentoRepository;
+        }
+    }
+}

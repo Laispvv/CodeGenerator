@@ -1,0 +1,17 @@
+öusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class MEDIDAController : BaseController<MEDIDAViewModel>
+    {
+        private readonly IMEDIDAServiceAppService _medidaAppService;
+        public MEDIDAController(IMEDIDAAppService medidaAppService) : base(medidaAppService)
+        {
+            _medidaAppService = MEDIDAAppService;
+        }
+    }
+}

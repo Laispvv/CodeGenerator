@@ -1,0 +1,17 @@
+¨using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class FUNCIONARIOController : BaseController<FUNCIONARIOViewModel>
+    {
+        private readonly IFUNCIONARIOServiceAppService _funcionarioAppService;
+        public FUNCIONARIOController(IFUNCIONARIOAppService funcionarioAppService) : base(funcionarioAppService)
+        {
+            _funcionarioAppService = FUNCIONARIOAppService;
+        }
+    }
+}

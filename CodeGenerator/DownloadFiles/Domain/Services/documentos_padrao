@@ -1,0 +1,16 @@
+¦using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IDOCUMENTOS_PADRAORepository _documentos_padraoRepository;
+        public AnexoService(IDOCUMENTOS_PADRAORepository documentos_padraoRepository) : base(documentos_padraoRepository)
+        {
+            _documentos_padraoRepository = documentos_padraoRepository;
+        }
+    }
+}

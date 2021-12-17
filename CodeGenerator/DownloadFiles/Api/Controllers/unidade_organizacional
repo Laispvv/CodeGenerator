@@ -1,0 +1,17 @@
+–using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class UNIDADE_ORGANIZACIONALController : BaseController<UNIDADE_ORGANIZACIONALViewModel>
+    {
+        private readonly IUNIDADE_ORGANIZACIONALServiceAppService _unidade_organizacionalAppService;
+        public UNIDADE_ORGANIZACIONALController(IUNIDADE_ORGANIZACIONALAppService unidade_organizacionalAppService) : base(unidade_organizacionalAppService)
+        {
+            _unidade_organizacionalAppService = UNIDADE_ORGANIZACIONALAppService;
+        }
+    }
+}

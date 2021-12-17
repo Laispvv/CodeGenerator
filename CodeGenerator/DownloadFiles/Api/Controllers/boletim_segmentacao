@@ -1,0 +1,17 @@
+øusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class BOLETIM_SEGMENTACAOController : BaseController<BOLETIM_SEGMENTACAOViewModel>
+    {
+        private readonly IBOLETIM_SEGMENTACAOServiceAppService _boletim_segmentacaoAppService;
+        public BOLETIM_SEGMENTACAOController(IBOLETIM_SEGMENTACAOAppService boletim_segmentacaoAppService) : base(boletim_segmentacaoAppService)
+        {
+            _boletim_segmentacaoAppService = BOLETIM_SEGMENTACAOAppService;
+        }
+    }
+}

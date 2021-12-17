@@ -1,0 +1,20 @@
+¾using AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class MATRICULA_REQUERIMENTOAppService : ServiceBase<MATRICULA_REQUERIMENTOViewModel, MATRICULA_REQUERIMENTO>, IMATRICULA_REQUERIMENTOAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IMATRICULA_REQUERIMENTOService _matricula_requerimentoService;
+        public MATRICULA_REQUERIMENTOAppService(IMapper mapper, IMATRICULA_REQUERIMENTOService matricula_requerimentoService) : base(mapper, matricula_requerimentoService)
+        {
+            _mapper = mapper;
+            _matricula_requerimentoService = matricula_requerimentoService;
+        }
+    }
+}

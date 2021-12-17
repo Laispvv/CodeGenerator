@@ -1,0 +1,17 @@
+€using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class FAMILIAController : BaseController<FAMILIAViewModel>
+    {
+        private readonly IFAMILIAServiceAppService _familiaAppService;
+        public FAMILIAController(IFAMILIAAppService familiaAppService) : base(familiaAppService)
+        {
+            _familiaAppService = FAMILIAAppService;
+        }
+    }
+}

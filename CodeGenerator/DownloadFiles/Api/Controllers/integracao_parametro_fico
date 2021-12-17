@@ -1,0 +1,17 @@
+´using hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class INTEGRACAO_PARAMETRO_FICOController : BaseController<INTEGRACAO_PARAMETRO_FICOViewModel>
+    {
+        private readonly IINTEGRACAO_PARAMETRO_FICOServiceAppService _integracao_parametro_ficoAppService;
+        public INTEGRACAO_PARAMETRO_FICOController(IINTEGRACAO_PARAMETRO_FICOAppService integracao_parametro_ficoAppService) : base(integracao_parametro_ficoAppService)
+        {
+            _integracao_parametro_ficoAppService = INTEGRACAO_PARAMETRO_FICOAppService;
+        }
+    }
+}

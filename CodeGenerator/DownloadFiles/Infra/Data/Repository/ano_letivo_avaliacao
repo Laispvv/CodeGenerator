@@ -1,0 +1,14 @@
+»using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+
+namespace hbhg.Infra.Data.Repository
+{
+    public class ANO_LETIVO_AVALIACAORepository : RepositoryBase<ANO_LETIVO_AVALIACAO>, IANO_LETIVO_AVALIACAORepository
+    {
+        private readonly ApplicationDbContext _context;
+        public ANO_LETIVO_AVALIACAORepository(ApplicationDbContext context) : base(context)
+        {
+            _context = context;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+Âusing hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Repository;
+using hbhg.Domain.Interfaces.Service;
+using hbhg.Domain.Services.Common;
+
+namespace hbhg.Domain.Services
+{
+    public class hbhgService : ServiceBase<hbhg>, IhbhgService
+    {
+        private readonly IMATRICULA_RESPONSAVELRepository _matricula_responsavelRepository;
+        public AnexoService(IMATRICULA_RESPONSAVELRepository matricula_responsavelRepository) : base(matricula_responsavelRepository)
+        {
+            _matricula_responsavelRepository = matricula_responsavelRepository;
+        }
+    }
+}

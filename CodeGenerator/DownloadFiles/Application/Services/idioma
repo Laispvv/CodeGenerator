@@ -1,0 +1,20 @@
+þusing AutoMapper;
+using hbhg.Application.Interfaces;
+using hbhg.Application.Services.Common;
+using hbhg.Application.ViewModels;
+using hbhg.Domain.Entities;
+using hbhg.Domain.Interfaces.Service;
+
+namespace hbhg.Application.Services
+{
+    public class IDIOMAAppService : ServiceBase<IDIOMAViewModel, IDIOMA>, IIDIOMAAppService
+    {
+        private readonly IMapper _mapper;
+        private readonly IIDIOMAService _idiomaService;
+        public IDIOMAAppService(IMapper mapper, IIDIOMAService idiomaService) : base(mapper, idiomaService)
+        {
+            _mapper = mapper;
+            _idiomaService = idiomaService;
+        }
+    }
+}

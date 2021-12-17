@@ -1,0 +1,17 @@
+Æusing hbhg.Application.Interfaces;
+using hbhg.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace hbhg.Api.Controllers
+{
+    [Route("api/[controller]/")]
+    [ApiController]
+    public class CONTAS_RECEBERController : BaseController<CONTAS_RECEBERViewModel>
+    {
+        private readonly ICONTAS_RECEBERServiceAppService _contas_receberAppService;
+        public CONTAS_RECEBERController(ICONTAS_RECEBERAppService contas_receberAppService) : base(contas_receberAppService)
+        {
+            _contas_receberAppService = CONTAS_RECEBERAppService;
+        }
+    }
+}
